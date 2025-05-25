@@ -1,36 +1,40 @@
-import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from typing import Optional
+import torch
+import torch.nn as nn
+import torch.optim as optim
 
-class TransactionClassifier:
-    """
-    Modelo de clasificación para transacciones bancarias usando Random Forest.
-    """
-    def __init__(self, n_estimators: int = 100, random_state: Optional[int] = None):
-        self.model = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
-        self.fitted = False
+class Transaction(nn.Module):
+    def __init__(self, input_dim, input_history, d_model=64, nhead=4, num_layers=2):
+        super().__init__()
+        self.embedding = nn.Linear(input_dim, d_model)
+        self.embedding_history = nn.Linear(input_history, d_model)
+        self.transformer = nn.TransformerEncoder(
+            nn.TransformerEncoderLayer(d_model, nhead), 
+            num_layers
+        )
+        self.fc = nn.Linear(d_model, 1)
 
-    def fit(self, X: np.ndarray, y: np.ndarray):
-        """
-        Ajusta el modelo a los datos de entrenamiento.
-        X: np.ndarray de forma (n_samples, n_features) con las características de las transacciones.
-        y: np.ndarray de forma (n_samples,) con las etiquetas de clase.
-        """
-        self.model.fit(X, y)
-        self.fitted = True
+    def forward(self, historial, recibo_actual):
+        # historial: [batch, seq_len, input_dim]
+        # recibo_actual: [batch, input_dim]
+        x = self.embedding_history(historial)  # [batch, seq_len, d_model]
+        x = x.permute(1, 0, 2)  # Transformer expects [seq_len, batch, d_model]
+        h = self.transformer(x)
+        h_final = h.mean(dim=0)  # Promedio sobre la dimensión de secuencia [batch, d_model]
+        rec_emb = self.embedding(recibo_actual)
+        combined = h_final + rec_emb  # simple combinación
+        return torch.sigmoid(self.fc(combined)).squeeze(-1)
+    
 
-    def predict(self, X: np.ndarray) -> np.ndarray:
-        """
-        Predice la clase de las transacciones dadas.
-        """
-        if not self.fitted:
-            raise RuntimeError("El modelo debe ser ajustado antes de predecir.")
-        return self.model.predict(X)
-
-    def predict_proba(self, X: np.ndarray) -> np.ndarray:
-        """
-        Devuelve las probabilidades de pertenencia a cada clase.
-        """
-        if not self.fitted:
-            raise RuntimeError("El modelo debe ser ajustado antes de predecir.")
-        return self.model.predict_proba(X)
+if __name__ == "__main__":
+    # Test the Transaction model
+    input_dim = 10  # Dimensión de entrada
+    input_history = 5  # Dimensión de la historia
+    model = Transaction(input_dim, input_history)
+    seq_len = 5  # Longitud de la secuencia
+    # Datos de prueba
+    historial = torch.randn(1, seq_len, input_history)  # [batch_size, seq_len, input_history]
+    recibo_actual = torch.randn(1, input_dim)  # [batch_size, input_dim]
+    
+    # Forward pass
+    output = model(historial, recibo_actual)
+    print(output.shape)  # Debería ser [batch_size]
