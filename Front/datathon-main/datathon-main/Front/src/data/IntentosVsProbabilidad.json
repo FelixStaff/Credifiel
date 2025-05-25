@@ -1,0 +1,402 @@
+[
+  {
+    "intentos":0,
+    "Probabilidad de Cobro":0.2435144395
+  },
+  {
+    "intentos":1,
+    "Probabilidad de Cobro":0.2417717993
+  },
+  {
+    "intentos":2,
+    "Probabilidad de Cobro":0.2264366842
+  },
+  {
+    "intentos":3,
+    "Probabilidad de Cobro":0.2100977919
+  },
+  {
+    "intentos":4,
+    "Probabilidad de Cobro":0.203192566
+  },
+  {
+    "intentos":5,
+    "Probabilidad de Cobro":0.1881940386
+  },
+  {
+    "intentos":6,
+    "Probabilidad de Cobro":0.1862910897
+  },
+  {
+    "intentos":7,
+    "Probabilidad de Cobro":0.182474909
+  },
+  {
+    "intentos":8,
+    "Probabilidad de Cobro":0.14701541
+  },
+  {
+    "intentos":9,
+    "Probabilidad de Cobro":0.1102253468
+  },
+  {
+    "intentos":10,
+    "Probabilidad de Cobro":0.0936754561
+  },
+  {
+    "intentos":11,
+    "Probabilidad de Cobro":0.0958640377
+  },
+  {
+    "intentos":12,
+    "Probabilidad de Cobro":0.090125724
+  },
+  {
+    "intentos":13,
+    "Probabilidad de Cobro":0.0904668554
+  },
+  {
+    "intentos":14,
+    "Probabilidad de Cobro":0.081785212
+  },
+  {
+    "intentos":15,
+    "Probabilidad de Cobro":0.0811421683
+  },
+  {
+    "intentos":16,
+    "Probabilidad de Cobro":0.0826503255
+  },
+  {
+    "intentos":17,
+    "Probabilidad de Cobro":0.07941565
+  },
+  {
+    "intentos":18,
+    "Probabilidad de Cobro":0.0906123851
+  },
+  {
+    "intentos":19,
+    "Probabilidad de Cobro":0.0868786386
+  },
+  {
+    "intentos":20,
+    "Probabilidad de Cobro":0.0912013226
+  },
+  {
+    "intentos":21,
+    "Probabilidad de Cobro":0.0825808879
+  },
+  {
+    "intentos":22,
+    "Probabilidad de Cobro":0.0787045935
+  },
+  {
+    "intentos":23,
+    "Probabilidad de Cobro":0.0802081288
+  },
+  {
+    "intentos":24,
+    "Probabilidad de Cobro":0.0808523974
+  },
+  {
+    "intentos":25,
+    "Probabilidad de Cobro":0.0745375408
+  },
+  {
+    "intentos":26,
+    "Probabilidad de Cobro":0.075743811
+  },
+  {
+    "intentos":27,
+    "Probabilidad de Cobro":0.0635783503
+  },
+  {
+    "intentos":28,
+    "Probabilidad de Cobro":0.064469914
+  },
+  {
+    "intentos":29,
+    "Probabilidad de Cobro":0.0621598742
+  },
+  {
+    "intentos":30,
+    "Probabilidad de Cobro":0.060087995
+  },
+  {
+    "intentos":31,
+    "Probabilidad de Cobro":0.0616083009
+  },
+  {
+    "intentos":32,
+    "Probabilidad de Cobro":0.0610265391
+  },
+  {
+    "intentos":33,
+    "Probabilidad de Cobro":0.0510580205
+  },
+  {
+    "intentos":34,
+    "Probabilidad de Cobro":0.0535985633
+  },
+  {
+    "intentos":35,
+    "Probabilidad de Cobro":0.0390482001
+  },
+  {
+    "intentos":36,
+    "Probabilidad de Cobro":0.0357142857
+  },
+  {
+    "intentos":37,
+    "Probabilidad de Cobro":0.0373134328
+  },
+  {
+    "intentos":38,
+    "Probabilidad de Cobro":0.041425162
+  },
+  {
+    "intentos":39,
+    "Probabilidad de Cobro":0.0361921098
+  },
+  {
+    "intentos":40,
+    "Probabilidad de Cobro":0.038208852
+  },
+  {
+    "intentos":41,
+    "Probabilidad de Cobro":0.0390021082
+  },
+  {
+    "intentos":42,
+    "Probabilidad de Cobro":0.0366034931
+  },
+  {
+    "intentos":43,
+    "Probabilidad de Cobro":0.0386865446
+  },
+  {
+    "intentos":44,
+    "Probabilidad de Cobro":0.0356195529
+  },
+  {
+    "intentos":45,
+    "Probabilidad de Cobro":0.0409647779
+  },
+  {
+    "intentos":46,
+    "Probabilidad de Cobro":0.0403474903
+  },
+  {
+    "intentos":47,
+    "Probabilidad de Cobro":0.0373668925
+  },
+  {
+    "intentos":48,
+    "Probabilidad de Cobro":0.0376365055
+  },
+  {
+    "intentos":49,
+    "Probabilidad de Cobro":0.0394272264
+  },
+  {
+    "intentos":50,
+    "Probabilidad de Cobro":0.0356861199
+  },
+  {
+    "intentos":51,
+    "Probabilidad de Cobro":0.040444092
+  },
+  {
+    "intentos":52,
+    "Probabilidad de Cobro":0.0359353164
+  },
+  {
+    "intentos":53,
+    "Probabilidad de Cobro":0.0417940877
+  },
+  {
+    "intentos":54,
+    "Probabilidad de Cobro":0.0352170352
+  },
+  {
+    "intentos":55,
+    "Probabilidad de Cobro":0.039819376
+  },
+  {
+    "intentos":56,
+    "Probabilidad de Cobro":0.0377319588
+  },
+  {
+    "intentos":57,
+    "Probabilidad de Cobro":0.0380952381
+  },
+  {
+    "intentos":58,
+    "Probabilidad de Cobro":0.0350072932
+  },
+  {
+    "intentos":59,
+    "Probabilidad de Cobro":0.0349007315
+  },
+  {
+    "intentos":60,
+    "Probabilidad de Cobro":0.0337314058
+  },
+  {
+    "intentos":61,
+    "Probabilidad de Cobro":0.0358866737
+  },
+  {
+    "intentos":62,
+    "Probabilidad de Cobro":0.0378867607
+  },
+  {
+    "intentos":63,
+    "Probabilidad de Cobro":0.0344536039
+  },
+  {
+    "intentos":64,
+    "Probabilidad de Cobro":0.0339486527
+  },
+  {
+    "intentos":65,
+    "Probabilidad de Cobro":0.0340497978
+  },
+  {
+    "intentos":66,
+    "Probabilidad de Cobro":0.0321267937
+  },
+  {
+    "intentos":67,
+    "Probabilidad de Cobro":0.0315993121
+  },
+  {
+    "intentos":68,
+    "Probabilidad de Cobro":0.0367471189
+  },
+  {
+    "intentos":69,
+    "Probabilidad de Cobro":0.0343019445
+  },
+  {
+    "intentos":70,
+    "Probabilidad de Cobro":0.0370695328
+  },
+  {
+    "intentos":71,
+    "Probabilidad de Cobro":0.0386057798
+  },
+  {
+    "intentos":72,
+    "Probabilidad de Cobro":0.0368643127
+  },
+  {
+    "intentos":73,
+    "Probabilidad de Cobro":0.0328051774
+  },
+  {
+    "intentos":74,
+    "Probabilidad de Cobro":0.0344750392
+  },
+  {
+    "intentos":75,
+    "Probabilidad de Cobro":0.034249662
+  },
+  {
+    "intentos":76,
+    "Probabilidad de Cobro":0.0352223978
+  },
+  {
+    "intentos":77,
+    "Probabilidad de Cobro":0.0344984113
+  },
+  {
+    "intentos":78,
+    "Probabilidad de Cobro":0.0364797082
+  },
+  {
+    "intentos":79,
+    "Probabilidad de Cobro":0.0300458716
+  },
+  {
+    "intentos":80,
+    "Probabilidad de Cobro":0.027816092
+  },
+  {
+    "intentos":81,
+    "Probabilidad de Cobro":0.0267960268
+  },
+  {
+    "intentos":82,
+    "Probabilidad de Cobro":0.0287769784
+  },
+  {
+    "intentos":83,
+    "Probabilidad de Cobro":0.0297076023
+  },
+  {
+    "intentos":84,
+    "Probabilidad de Cobro":0.0315814282
+  },
+  {
+    "intentos":85,
+    "Probabilidad de Cobro":0.0323877069
+  },
+  {
+    "intentos":86,
+    "Probabilidad de Cobro":0.0313688213
+  },
+  {
+    "intentos":87,
+    "Probabilidad de Cobro":0.0339712919
+  },
+  {
+    "intentos":88,
+    "Probabilidad de Cobro":0.0272223561
+  },
+  {
+    "intentos":89,
+    "Probabilidad de Cobro":0.0360338573
+  },
+  {
+    "intentos":90,
+    "Probabilidad de Cobro":0.0356271352
+  },
+  {
+    "intentos":91,
+    "Probabilidad de Cobro":0.0355131031
+  },
+  {
+    "intentos":92,
+    "Probabilidad de Cobro":0.0349323493
+  },
+  {
+    "intentos":93,
+    "Probabilidad de Cobro":0.02958727
+  },
+  {
+    "intentos":94,
+    "Probabilidad de Cobro":0.0322822823
+  },
+  {
+    "intentos":95,
+    "Probabilidad de Cobro":0.0318615153
+  },
+  {
+    "intentos":96,
+    "Probabilidad de Cobro":0.0329476861
+  },
+  {
+    "intentos":97,
+    "Probabilidad de Cobro":0.0295379955
+  },
+  {
+    "intentos":98,
+    "Probabilidad de Cobro":0.0340850846
+  },
+  {
+    "intentos":99,
+    "Probabilidad de Cobro":0.0321750322
+  }
+]
