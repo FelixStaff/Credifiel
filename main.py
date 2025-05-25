@@ -2,38 +2,41 @@ import torch
 from models.transaction_classifier import Transaction
 from pipeline.timeseries_pipeline import pipeline
 import random
+from readData import PreprocesadorCobros
+from readData import convertir_a_tensor
 
-# Parámetros de ejemplo
-input_dim = 8  # Cambia esto según tus datos reales
-input_history = 5  # Cambia esto según tus datos reales
-batch_size = 10
-seq_len = 5
-
+batch_size = 1
+# Leemos los datos
+print ('Leyendo datos...')
+preprocesador = PreprocesadorCobros('Data/ListaCobroDetalle2025.csv')
+historial, labels = preprocesador.ejecutar_todo()
+print ('Datos leídos')
 # Instanciar modelo y pipeline
+input_dim = len(historial[0][0])
+input_history = len(historial[0][0])
 model = Transaction(input_dim, input_history)
-p = pipeline(model)
-
-# Crear historial como una lista de vectores de tamaño aleatorio
-historial = []
-for _ in range(batch_size):
-    seq_length = random.randint(1, seq_len)  # longitud aleatoria para cada batch
-    historial.append(torch.randn(seq_length, input_history))
-# Para compatibilidad con el modelo, convierte la lista a un objeto tipo packed sequence o padéalo si es necesario
-
-# Crear actual como antes
-actual = torch.randn(batch_size, input_dim)
-
+pipe = pipeline(model)
+print ('Pipeline creado')
 # Realizar predicción
 for i in range(len(historial)):
+    input = torch.tensor(historial[i][:-1])
+    actual = torch.tensor(historial[i][-1])
+    outp = torch.tensor(labels[i])
+    if len(input) != input_history:
+        print('Error en la longitud de la entrada')
+        break
     # Meter los valores en el modelo
-    output = model(historial[i].unsqueeze(0), actual[i].unsqueeze(0))
+    output = model(input.unsqueeze(0), actual.unsqueeze(0))
 
     print('Predicción de ejemplo:', output)
 
 # pipeline
-pipe = pipeline(model)
-histories = [torch.randn(seq_len, input_history) for _ in range(batch_size)]
-recibos = [torch.randn(input_dim) for _ in range(batch_size)]
-outputs = [torch.randn(1) for _ in range(batch_size)]
-trian_loader = list(zip(histories, recibos, outputs))
-pipe.train(trian_loader, num_epochs=10)
+train_loader = convertir_a_tensor(historial, labels)
+for (historical, actual, label) in train_loader:
+    print('Historial:', historical)
+    print('Recibo actual:', actual)
+    print('Etiqueta:', label)
+    break
+# Entrenar el modelo
+
+pipe.train(train_loader, num_epochs=10)
