@@ -50,8 +50,6 @@ class pipeline:
                     if counter % 1000 == 0:
                         torch.save(self.model.state_dict(), f'model_epoch_{epoch}_step_{counter}.pth')
 
-            total_loss /= counter
-            total_loss.backward()
-            self.optimizer.step()
+            
             total_loss = 0.0
             print(f'Epoch {epoch+1}/{num_epochs}, Loss: {loss.item()}')

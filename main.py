@@ -8,7 +8,7 @@ from readData import convertir_a_tensor
 batch_size = 1
 # Leemos los datos
 print ('Leyendo datos...')
-preprocesador = PreprocesadorCobros('Data/ListaCobroDetalle2025.csv')
+preprocesador = PreprocesadorCobros('Data/TrainData.csv')
 historial, labels = preprocesador.ejecutar_todo()
 print ('Datos leídos')
 # Instanciar modelo y pipeline

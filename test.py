@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report
 batch_size = 1
 # Leemos los datos
 print ('Leyendo datos...')
-preprocesador = PreprocesadorCobros('Data/ValData.csv')
+preprocesador = PreprocesadorCobros('Data\TestData.csv')
 historial, labels = preprocesador.ejecutar_todo()
 print ('Datos leídos')
 # Instanciar modelo y pipeline
@@ -19,7 +19,7 @@ input_dim = len(historial[0][0])
 input_history = len(historial[0][0])
 model = Transaction(input_dim, input_history)
 # Cargar el modelo preentrenado
-model.load_state_dict(torch.load('model_epoch_0_step_8000.pth'))
+model.load_state_dict(torch.load('model_epoch_0_step_2000.pth'))
 pipe = pipeline(model)
 print ('Pipeline creado')
 # Realizar predicción

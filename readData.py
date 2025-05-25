@@ -40,7 +40,10 @@ class PreprocesadorCobros:
     # --- Agrupación y generación de features ---
     def agrupar_por_credito(self):
         # Quitamos la variable de idListaCobro, consecutivoCobro, idEmisora,IdBanco,IdBancoCliente
-        self.df = self.df.drop(columns=['idListaCobro', 'consecutivoCobro', 'idEmisora', 'IdBanco', 'IdBancoCliente'])
+        try:
+            self.df = self.df.drop(columns=['idListaCobro', 'consecutivoCobro', 'idEmisora', 'IdBanco', 'IdBancoCliente'])
+        except KeyError:
+            self.df = self.df.drop(columns=['idListaCobro', 'consecutivoCobro'])
         self.Cobradores = self.df.groupby('idCredito')
         # print the columns of the grouped data
 
@@ -101,12 +104,14 @@ def convertir_a_tensor(historial, labels):
             tensor_val = torch.tensor(historial[i][0], dtype=torch.float32)
             # Modificamos la variable 4 (índice 4) a -1 para el recibo actual
             recibo_actual = tensor_val.clone()
+            recibo_actual[3] = -1
             recibo_actual[4] = -1
             historial_tensor.append(tensor_val.unsqueeze(0))
             recibo_actual_tensor.append(recibo_actual)
         else:
             historial_tensor.append(torch.tensor(historial[i][:-1], dtype=torch.float32))
             recibo_actual = torch.tensor(historial[i][-1], dtype=torch.float32)
+            recibo_actual[3] = -1
             recibo_actual[4] = -1
             recibo_actual_tensor.append(recibo_actual)
         labels_tensor.append(torch.tensor(labels[i], dtype=torch.float32))
